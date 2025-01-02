@@ -1,0 +1,7 @@
+directories:
+  app:
+    - models
+    - controllers
+    - views
+  core: []
+  public: []

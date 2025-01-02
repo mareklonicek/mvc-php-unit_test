@@ -1,0 +1,17 @@
+{
+    "name": "marek/usa",
+    "autoload": {
+        "psr-4": {
+            "Usa\\": "usa/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marek Loníček",
+            "email": "mark.lonicek@seznam.cz"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    }
+}
