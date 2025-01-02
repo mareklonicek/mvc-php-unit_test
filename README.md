@@ -1,4 +1,4 @@
 # My PHP Project
 
-![Coverage Status](https://coveralls.io/repos/github/username/repository/badge.svg)
+[![Test Coverage](https://raw.githubusercontent.com/Hi-Folks/array/main/badge-coverage.svg)](https://packagist.org/packages/hi-folks/array)
 
