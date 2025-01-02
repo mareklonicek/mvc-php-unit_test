@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"  # Mappuje port 8080 na port 80 v Docker containeru
+    volumes:
+      - .:/var/www/html  # Mappuje aktuální adresář do Dockeru
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
