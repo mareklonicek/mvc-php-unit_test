@@ -1,0 +1,30 @@
+name: Run PHPUnit Tests
+
+on:
+  push:
+    branches:
+      - main   # nebo jiná větev, kterou používáš
+  pull_request:
+    branches:
+      - main   # nebo jiná větev, kterou používáš
+
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'   # Ujisti se, že používáš správnou verzi PHP, kterou potřebuješ
+          extensions: mbstring, bcmath, dom # přidej další, pokud jsou potřeba pro tvůj projekt
+
+      - name: Install dependencies
+        run: |
+          composer install --no-interaction --prefer-dist
+
+      - name: Run PHPUnit tests
+        run: vendor/bin/phpunit --testdox
