@@ -13,5 +13,9 @@ jobs:
           php-version: '8.1'
       - name: Install dependencies
         run: composer install
-      - name: Run tests
-        run: vendor/bin/phpunit
+      - name: Run test suite with coverage
+        run: vendor/bin/phpunit --coverage-clover=coverage.xml
+      - name: Upload coverage to Coveralls
+        run: |
+          curl -s https://codecov.io/bash > codecov
+          bash codecov
